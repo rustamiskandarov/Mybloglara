@@ -15,7 +15,8 @@ mix.styles([
     'resources/assets/admin/font-awesome/4.5.0/css/font-awesome.min.css',
     'resources/assets/admin/ionicons/2.0.1/css/ionicons.min.css',
     'resources/assets/admin/dist/css/AdminLTE.min.css',
-    'resources/assets/admin/dist/css/skins/_all-skins.min.css'
+    'resources/assets/admin/dist/css/skins/_all-skins.min.css',
+    'resources/assets/admin/dist/css/common.css'
 ], 'public/css/admin.css');
 
 mix.scripts([
@@ -29,3 +30,4 @@ mix.scripts([
 
 mix.copy('resources/assets/admin/bootstrap/fonts', 'public/fonts');
 mix.copy('resources/assets/admin/dist/fonts', 'public/fonts');
+mix.copy('resources/assets/admin/dist/img', 'public/img');

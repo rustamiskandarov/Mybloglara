@@ -1,0 +1,13 @@
+/*button delete style*/
+table.table form{
+    display: inline-block;
+}
+
+button.delete-task{
+    background: transparent;
+    border: none;
+    color: #286dd7;
+    padding: 0px;
+}
+
+/*END button delete style*/
