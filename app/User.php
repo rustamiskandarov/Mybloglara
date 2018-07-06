@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email',
     ];
 
     /**
@@ -43,11 +44,10 @@ class User extends Authenticatable
      * @return static
      * работа с пользователем
      */
-    public function add($fields)
+    public static function add($fields)
     {
         $user = new static;
         $user->fill($fields);
-        $user->password = bcrypt($fields['password']);
         $user->save();
 
         return $user;
@@ -56,10 +56,17 @@ class User extends Authenticatable
     public function edit($fields)
     {
         $this->fill($fields);
-        $this->password = bcrypt($fields['password']);
         $this->save();
     }
 
+    public function generatePassword($password)
+    {
+        if($password != null)
+        {
+            $this->password = bcrypt($password);
+            $this->save();
+        }
+    }
     public function remove()
     {
         $this->delete();
@@ -72,20 +79,22 @@ class User extends Authenticatable
     public function uploadAvatar($image)
     {
         if($image ==null) {return;}; //если image пустой то выходим из функции
-        Storage::delete('uploads/'. $this->image);//удаляет существующий файл
+        if($this->avatar !== null){
+            Storage::delete('uploads/'. $this->avatar);//удаляет существующий файл
+        }
         $filename = str_random(10).'.'.$image->extension();//гинирирует имя файла
-        $image->saveAs('upload', $filename);//сохраняет файл на диск
-        $this->image = $filename;//сохраняет название файла в БД
+        $image->storeAs('uploads/', $filename);//сохраняет файл на диск
+        $this->avatar = $filename;//сохраняет название файла в БД
         $this->save();
     }
 
     public function getAvatar()
     {
-        if($this->image == null){
-            return '/img/default-avatar.png';
+        if($this->avatar == null){
+            return '/img/default-avatar.jpg';
         }
 
-        return '/uploads/'. $this->image;
+        return '/uploads/'. $this->avatar;
     }
 
     /**
@@ -102,6 +111,8 @@ class User extends Authenticatable
         $this->is_admin = 1;
         $this->save();
     }
+
+
 
     public function toggleAdmin($value)
     {
@@ -133,6 +144,21 @@ class User extends Authenticatable
             return $this->unban();
         }
         return $this->ban();
+    }
+
+    public function isAdmin()
+    {
+        if($this->is_admin !== 0){
+            return "Админне админ";
+        }
+        return "не админ";
+    }
+    public function isBanned()
+    {
+        if($this->status !== 0){
+            return "Заблокирован";
+        }
+        return "не забанен";
     }
 
 
