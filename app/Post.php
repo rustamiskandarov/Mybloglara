@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Support\Facades\Storage;
@@ -9,16 +10,16 @@ use Illuminate\Support\Facades\Storage;
 class Post extends Model
 {
     use Sluggable;
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['title', 'content', 'date'];
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function author()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function tags()
@@ -63,26 +64,34 @@ class Post extends Model
 
     public function remove()
     {
-        Storage::delete('uploads/'. $this->image);//удаляет существующий файл
+        $this->removeImage();
         $this->delete();
     }
 
     public function uploadImage($image)
     {
         if($image ==null) {return;}; //если image пустой то выходим из функции
-        Storage::delete('uploads/'. $this->image);//удаляет существующий файл
+
+        $this->removeImage();
         $filename = str_random(10).'.'.$image->extension();//гинирирует имя файла
-        $image->saveAs('upload', $filename);//сохраняет файл на диск
+        $image->storeAs('uploads', $filename);//сохраняет файл на диск
         $this->image = $filename;//сохраняет название файла в БД
         $this->save();
     }
 
+    protected function removeImage()
+    {
+        if($this->image != null){
+            Storage::delete('uploads/'. $this->image);//удаляет существующий файл
+        }
+    }
+
     public function setCategory($id)
-{
-    if($id ==null){return;};
+    {
+    if($id == null){return;};
     $this->category_id = $id;
     $this->save();
-}
+    }
 
     public function setTags($ids)
     {
@@ -113,13 +122,13 @@ class Post extends Model
 
     public function setFeatured()
     {
-        $this->id_featured = 1;
+        $this->is_featured = 1;
         $this->save();
     }
 
     public function setStandart()
     {
-        $this->id_featured = 0;
+        $this->is_featured = 0;
         $this->save();
     }
 
@@ -135,9 +144,27 @@ class Post extends Model
     public function getImage()
     {
         if($this->image == null){
-            return '/img/no-imge.png';
+            return '/img/no-image.png';
         }
 
         return '/uploads/'. $this->image;
+    }
+
+    public function getCategoryTitle()
+    {
+        return ($this->category != null) ? $this->category->title : "без категории";
+    }
+
+    public function getTagsTitles()
+    {
+        return (!$this->tags->isEmpty())
+            ? implode(', ', $this->tags->pluck('title')->all())
+            : 'Нет тегов';
+    }
+
+    public function setDateAttribute($value)
+    {
+        $date = Carbon::createFromFormat('d/m/y', $value)->format('Y-m-d');
+        $this->attributes['date'] = $date;
     }
 }
