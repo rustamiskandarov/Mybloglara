@@ -12,3 +12,9 @@ $(document).ready(function (){
       radioClass: 'iradio_minimal-blue'
     });
 });
+
+//ckfinder
+$(document).ready(function () {
+    var editor = CKEDITOR.replaceAll();
+    CKFinder.setupCKEditor(editor);
+});

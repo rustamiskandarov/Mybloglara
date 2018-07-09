@@ -68,7 +68,7 @@
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" class="minimal">
+                                <input type="checkbox" class="minimal" name="is_featured">
                             </label>
                             <label>
                                 Рекомендовать
@@ -78,7 +78,7 @@
                         <!-- checkbox -->
                         <div class="form-group">
                             <label>
-                                <input type="checkbox" class="minimal">
+                                <input type="checkbox" class="minimal" name="status">
                             </label>
                             <label>
                                 Черновик
