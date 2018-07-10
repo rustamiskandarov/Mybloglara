@@ -35,7 +35,8 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Название</th>
+                            <th>Заголовок</th>
+                            <th>Описание</th>
                             <th>Категория</th>
                             <th>Теги</th>
                             <th>Картинка</th>
@@ -47,6 +48,7 @@
                         <tr>
                             <td>{{$post->id}}</td>
                             <td>{{$post->title}}</td>
+                            <td>{{$post->description}}</td>
                             <td>{{$post->getCategoryTitle()}}</td>
                             <td>{{$post->getTagsTitles()}}</td>
                             <td>

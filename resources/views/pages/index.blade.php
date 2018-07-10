@@ -1,4 +1,4 @@
-@extends('front.layout')
+@extends('layout')
 @section('content')
 <div class="main-content">
     <div class="container">
@@ -53,7 +53,7 @@
                     <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
                 </ul>
             </div>
-            @include('front.sidebar')
+            @include('sidebar')
 
         </div>
     </div>
