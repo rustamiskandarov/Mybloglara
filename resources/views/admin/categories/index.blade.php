@@ -42,7 +42,7 @@
                             <td>{{$category->id}}</td>
                             <td>{{$category->title}}</td>
                             <td>
-                                <a href="{{route('categories.edit', $category->id)}}" class="fa fa-pencil"></a>
+                                <a href="{{route('home.view', $post->id)}}" class="fa fa-pencil"></a>
 
                                 {{Form::open(['route'=>['categories.destroy', $category->id], 'method'=>'delete'])}}
                                     <button type="submit" class="delete-task" onclick="return confirm('Вы уверены?')">

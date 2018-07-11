@@ -10,7 +10,7 @@
     <title>Blog</title>
 
     <!-- common css -->
-    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="/css/public.css">
 
     <!-- HTML5 shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     <![endif]-->
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="/image/png" href="img/favicon.png">
 
 </head>
 
@@ -37,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="/img/logo.png" alt=""></a>
             </div>
 
 
@@ -83,28 +83,28 @@
         <div id="footer-instagram" class="owl-carousel">
 
             <div class="item">
-                <a href="#"><img src="img/ins-1.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-1.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href="#"><img src="img/ins-2.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-2.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href="#"><img src="img/ins-3.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-3.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href="#"><img src="img/ins-4.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-4.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href="#"><img src="img/ins-5.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-5.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href="#"><img src="img/ins-6.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-6.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href="#"><img src="img/ins-7.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-7.jpg" alt=""></a>
             </div>
             <div class="item">
-                <a href="#"><img src="img/ins-8.jpg" alt=""></a>
+                <a href="#"><img src="/img/ins-8.jpg" alt=""></a>
             </div>
 
         </div>
@@ -116,7 +116,7 @@
         <div class="row">
             <div class="col-md-4">
                 <aside class="footer-widget">
-                    <div class="about-img"><img src="img/footer-logo.png" alt=""></div>
+                    <div class="about-img"><img src="/img/footer-logo.png" alt=""></div>
                     <div class="about-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed voluptua. At vero eos et
                         accusam et justo duo dlores et ea rebum magna text ar koto din.
@@ -154,7 +154,7 @@
                                             magna aliquyam eratma</p>
                                     </div>
                                     <div class="author-id">
-                                        <img src="img/author.png" alt="">
+                                        <img src="/img/author.png" alt="">
 
                                         <div class="author-text">
                                             <h4>Sophia</h4>
@@ -173,7 +173,7 @@
                                             magna aliquyam eratma</p>
                                     </div>
                                     <div class="author-id">
-                                        <img src="img/author.png" alt="">
+                                        <img src="/img/author.png" alt="">
 
                                         <div class="author-text">
                                             <h4>Sophia</h4>
@@ -192,7 +192,7 @@
                                             magna aliquyam eratma</p>
                                     </div>
                                     <div class="author-id">
-                                        <img src="img/author.png" alt="">
+                                        <img src="/img/author.png" alt="">
 
                                         <div class="author-text">
                                             <h4>Sophia</h4>
@@ -214,7 +214,7 @@
 
                     <div class="custom-post">
                         <div>
-                            <a href="#"><img src="img/footer-img.png" alt=""></a>
+                            <a href="#"><img src="/img/footer-img.png" alt=""></a>
                         </div>
                         <div>
                             <a href="#" class="text-uppercase">Home is peaceful Place</a>
@@ -238,7 +238,7 @@
     </div>
 </footer>
 <!-- js files -->
-<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="/js/public.js"></script>
 
 </body>
 </html>

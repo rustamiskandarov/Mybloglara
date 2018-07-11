@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 
+
+
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function (){
     Route::get('/', 'DashboardController@index');
     Route::resource('/categories', 'CategoriesController');
@@ -20,3 +22,5 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function (){
     Route::resource('/users', 'UsersController');
     Route::resource('/post', 'PostController');
 });
+
+Route::get('post/{slug}', 'HomeController@show')->name('post.show');
