@@ -24,3 +24,5 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function (){
 });
 
 Route::get('post/{slug}', 'HomeController@show')->name('post.show');
+Route::get('tags/{slug}', 'HomeController@tag')->name('tag.show');
+Route::get('categories/{slug}', 'HomeController@category')->name('category.show');
