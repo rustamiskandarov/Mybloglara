@@ -27,11 +27,22 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => 'admin'],
     Route::resource('/post', 'PostController');
 });
 
+Route::group(['middleware' => 'guest'], function (){
+    Route::get('/register', 'AuthController@registerForm');
+    Route::post('/register', 'AuthController@register');
+    Route::get('/login', 'AuthController@loginForm')->name('login');
+    Route::post('/login', 'AuthController@login');
+});
+Route::group(['middleware' => 'auth'], function (){
+    Route::get('/logout', 'AuthController@logout');
+    Route::get('/profile', 'ProfileController@index');
+    Route::post('/profile', 'ProfileController@store');
+});
+
+
+
 Route::get('post/{slug}', 'HomeController@show')->name('post.show');
 Route::get('tags/{slug}', 'HomeController@tag')->name('tag.show');
 Route::get('categories/{slug}', 'HomeController@category')->name('category.show');
-Route::get('/register', 'AuthController@registerForm');
-Route::post('/register', 'AuthController@register');
-Route::get('/login', 'AuthController@loginForm');
-Route::get('/logout', 'AuthController@logout');
-Route::post('/login', 'AuthController@login');
+
+
