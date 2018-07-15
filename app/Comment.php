@@ -7,29 +7,14 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Comment extends Model
 {
-    use Sluggable;
     public function post()
     {
-        return $this->hasOne(Post::class);
+        return $this->belongsTo(Post::class); //пост имеет множество коментариев
     }
 
     public function author()
     {
-        return $this->hasOne(User::class);
-    }
-
-    /**
-     * Return the sluggable configuration array for this model.
-     *
-     * @return array
-     */
-    public function sluggable()
-    {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
+        return $this->belongsTo(User::class); //автор иммеет множество комментариев
     }
 
     /**

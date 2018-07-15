@@ -28,7 +28,7 @@
                                         <p>{!! $post->description !!}</p>
 
                                         <div class="social-share">
-                                            <span class="social-share-title pull-left text-capitalize">{{$post->geDate()}}</span>
+                                            <span class="social-share-title pull-left text-capitalize">{{$post->author->name}}, {{$post->geDate()}}</span>
                                         </div>
                                     </div>
                                 </div>

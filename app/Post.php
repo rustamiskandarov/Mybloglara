@@ -5,12 +5,13 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
     use Sluggable;
-    protected $fillable = ['title', 'content', 'date'];
+    protected $fillable = ['title', 'content', 'date', 'description'];
 
     public function category()
     {
@@ -50,7 +51,7 @@ class Post extends Model
     {
         $post = new static;
         $post->fill($fields);
-        $post->user_id = 1;
+        $post->user_id = Auth::user()->id;
         $post->save();
 
         return $post;
@@ -231,6 +232,5 @@ class Post extends Model
     {
         return self::orderBy('date', 'desc')->take(4)->get();
     }
-
 
 }
