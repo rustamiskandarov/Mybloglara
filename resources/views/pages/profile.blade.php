@@ -17,11 +17,7 @@
                         <form class="form-horizontal contact-form" role="form" method="post" action="/profile"
                         enctype="multipart/form-data">
                             {{csrf_field()}}
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <input type="file" class="form-control" id="image" name="avatar">
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" id="name" name="name"

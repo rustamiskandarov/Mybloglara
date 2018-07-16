@@ -113,28 +113,32 @@
                         @endforeach
                     </div>
                 </div><!--related post carousel-->
-                <div class="bottom-comment"><!--bottom comment-->
-                    <h4>3 comments</h4>
+                <h4>Коментарии</h4>
+                @if(!$post->comments->isEmpty())
+                    @foreach($post->getComments() as $comment)
+                    <div class="bottom-comment"><!--bottom comment-->
 
                     <div class="comment-img">
-                        <img class="img-circle" src="assets/images/comment-img.jpg" alt="">
+                        <img class="img-circle" src="{{$comment->author->getAvatar()}}" alt="" style="width: 80px; height: 80px;">
                     </div>
 
                     <div class="comment-text">
                         <a href="#" class="replay btn pull-right"> Replay</a>
-                        <h5>Rubel Miah</h5>
+                        <h5>{{$comment->author->name}}</h5>
 
                         <p class="comment-date">
-                            December, 02, 2015 at 5:57 PM
+                            {{$comment->created_at->diffForHumans()}}
                         </p>
 
 
-                        <p class="para">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                            diam nonumy
-                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                            voluptua. At vero eos et cusam et justo duo dolores et ea rebum.</p>
+                        <p class="para">
+                            {{$comment->text}}
+                        </p>
                     </div>
+
                 </div>
+                @endforeach
+                @endif
                 <!-- end bottom comment-->
 
                 @if(Auth::check())
@@ -154,7 +158,8 @@
                         <button class="btn send-btn">Опубликовать комментарий</button>
                     </form>
                 </div><!--end leave comment-->
-
+                @else
+                        <h4>Войдите чтобы добавить комментарий</h4>
                 @endif
             </div>
             @include('sidebar')

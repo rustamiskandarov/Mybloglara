@@ -14,7 +14,7 @@ class Comment extends Model
 
     public function author()
     {
-        return $this->belongsTo(User::class); //автор иммеет множество комментариев
+        return $this->belongsTo(User::class, 'user_id'); //автор иммеет множество комментариев
     }
 
     /**
@@ -33,15 +33,16 @@ class Comment extends Model
 
     public function toggleStatus()
     {
-        if($this->status = 0){
-            $this->allow();
+        if($this->status == 0){
+            return $this->allow();
         }
 
-        $this->disAllow();
+        return $this->disAllow();
     }
 
     public function remove()
     {
         $this->delete();
     }
+
 }

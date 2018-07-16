@@ -25,6 +25,9 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => 'admin'],
     Route::resource('/tags', 'TagsController');
     Route::resource('/users', 'UsersController');
     Route::resource('/post', 'PostController');
+    Route::get('/comments', 'CommentController@index');
+    Route::get('/comments/toggle/{id}', 'CommentController@toggle');
+    Route::delete('/comments/{id}', 'CommentController@destroy')->name('comment.destroy');
 });
 
 Route::group(['middleware' => 'guest'], function (){

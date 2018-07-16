@@ -213,10 +213,12 @@
                 <li><a href="{{route('tags.index')}}"><i class="fa fa-tags"></i> <span>Теги</span></a></li>
                 <li><a href="{{route('users.index')}}"><i class="fa fa-user"></i> <span>Пользователи</span></a></li>
                 <li>
-{{--                    <a href="{{route('comments.index')}}">--}}
+                    <a href="/admin/comments">
                         <i class="fa fa-commenting"></i> <span>Комментарии</span>
                         <span class="pull-right-container">
-              <small class="label pull-right bg-green">5</small>
+              @if($newCommentsCount != 0)
+                            <small class="label pull-right bg-green">{{$newCommentsCount}}</small>
+              @endif
             </span>
                     </a>
                 </li>

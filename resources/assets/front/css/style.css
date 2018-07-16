@@ -1181,7 +1181,7 @@ blog css
 .bottom-comment {
     background: #fff;
     padding: 20px;
-    margin: 50px 0;
+    margin: 25px 0;
     color: #212121;
     overflow: hidden;
 }
@@ -1200,7 +1200,7 @@ blog css
 }
 
 .bottom-comment .comment-img {
-    padding: 10px 15px 100px;
+    padding: 10px 15px 50px;
     float: left;
 }
 
