@@ -2,11 +2,12 @@
     <div class="primary-sidebar">
 
         <aside class="widget news-letter">
-            <h3 class="widget-title text-uppercase text-center">Get Newsletter</h3>
-
-            <form action="#">
-                <input type="email" placeholder="Your email address">
-                <input type="submit" value="Subscribe Now"
+            <h3 class="widget-title text-uppercase text-center">Оформите подписку</h3>
+            @include('admin.errors')
+            <form action="/subscribe" method="post">
+                {{csrf_field()}}
+                <input type="text" class="subscribe_field" placeholder="Введите свой Email" name="email">
+                <input type="submit" value="Оформить подписку"
                        class="text-uppercase text-center btn btn-subscribe">
             </form>
 

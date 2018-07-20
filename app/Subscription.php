@@ -10,12 +10,20 @@ class Subscription extends Model
     {
         $sub = new static; //создаём экземпляр данного класса
         $sub->email = $email; //присваеваем полю значение
-        $sub->token = str_random(100); //генерируем токен
         $sub->save();
 
         return $sub;
     }
 
+    public function generateToken()
+    {
+        $this->token = str_random(100); //генерируем токен
+    }
+
+    public function getStatus()
+    {
+        return ($this->token == null)? 'Потверждён' : 'Не потверждён';
+    }
     public function remove()
     {
         $this->delete();

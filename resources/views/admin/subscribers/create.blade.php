@@ -5,10 +5,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Изменение категории
-            <small></small>
+            Добавляем подписчика
+            <small>приятные слова..</small>
         </h1>
-
     </section>
 
     <!-- Main content -->
@@ -16,25 +15,27 @@
 
         <!-- Default box -->
         <div class="box">
+            {!! Form::open(['route' => 'subscribers.store']) !!}
+
             <div class="box-header with-border">
-                <h3 class="box-title">Меняем категорию</h3>
-            </div>
+                <h3 class="box-title">Добавляем подписчика</h3>
+
             @include('admin.errors')
+            </div>
             <div class="box-body">
-            {{Form::open(['route'=>['categories.update', $category->id], 'method'=>'put'])}}
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Название</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{$category->title}}" name="title">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="email">
                     </div>
                 </div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button class="btn btn-default">Назад</button>
-                <button class="btn btn-warning pull-right">Изменить</button>
+                <a href="{{redirect()->back()}}" class="btn btn-default">Назад</a>
+                <button class="btn btn-success pull-right">Добавить</button>
             </div>
-            {{Form::close()}}
+        {!! Form::close() !!}
             <!-- /.box-footer-->
         </div>
         <!-- /.box -->

@@ -1,0 +1,101 @@
+[33mcommit a43cb83793d8280a16d57fbe5e92daa12ce1efc2[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Mon Jul 16 18:07:22 2018 +0300
+
+    Add post comments
+
+[33mcommit 25f4dc8d23da4c5f4cbeb2b7e0a36a077f458dc4[m
+Author: Rust <admin@helper.com>
+Date:   Mon Jul 16 02:33:21 2018 +0300
+
+    Add comments form
+
+[33mcommit 37e76c27a12bf0e2d0048c8e1e4b7fb7d043f53d[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Sun Jul 15 10:49:48 2018 +0300
+
+    Add profile page
+
+[33mcommit bce725f0335e36c97003db5d35684b01e1990596[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Sat Jul 14 00:09:14 2018 +0300
+
+    add auth and register
+
+[33mcommit 2cbbb31a4b698dfcb8f849cddf86bd8916d859e9[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Thu Jul 12 18:45:07 2018 +0300
+
+    stretch teampleate complete
+
+[33mcommit a52543ae614583df3adf3106151afb7e551f2e3f[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Wed Jul 11 18:03:39 2018 +0300
+
+    create single post templeate
+
+[33mcommit 9f32a762fa9706ec3a2af905636c12d4877ff6c0[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Tue Jul 10 17:54:09 2018 +0300
+
+    Add description column for post table
+
+[33mcommit 77f21829c4feff58a05a709558edeb5f331f9a89[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Mon Jul 9 17:56:18 2018 +0300
+
+    Planting Index template
+
+[33mcommit 5a9fe2e4a89a9c84160358d3ebc47a46d0345df7[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Mon Jul 9 16:13:57 2018 +0300
+
+    Full create CRUD action for posts in admn panel
+
+[33mcommit dae048f2d900e7ea62bfd7b85877af37a90dad10[m
+Author: Rust <admin@helper.com>
+Date:   Mon Jul 9 01:52:00 2018 +0300
+
+    Create CRUD actions for Posts
+
+[33mcommit d67436afbe27e35afc069888cf006d48a5176d35[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Fri Jul 6 15:33:05 2018 +0300
+
+    Create CRUD for Users
+
+[33mcommit 04b90d94b1cbc6308f8144ad29e5fb9de8ee7704[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Tue Jul 3 17:47:32 2018 +0300
+
+    Create CRUD actions for category and tags
+
+[33mcommit 899788c6b0abd8a5bc0f384fa176ae3775e2fb53[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Fri Jun 29 16:04:44 2018 +0300
+
+    Add templite for admin panel
+
+[33mcommit db631b5b8aa24e60e16ca54835d729098a7245cd[m
+Author: Rust <admin@helper.com>
+Date:   Wed Jun 27 23:25:35 2018 +0300
+
+    Fix assents
+
+[33mcommit e0ea46871a5bffecd5bad558835ea93634eb0345[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Wed Jun 20 18:10:04 2018 +0300
+
+    Add assets for admin templates
+
+[33mcommit a88b414e93c7ec6ef4a698e74c4767df8e224ef6[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Wed Jun 20 16:26:06 2018 +0300
+
+    Make funcional for models
+
+[33mcommit 6e42a0c165cebb6e750c406bfc3b24b6ff868913[m
+Author: Rust <rustpo4ta@mail.ru>
+Date:   Tue Jun 19 17:39:55 2018 +0300
+
+    Start project

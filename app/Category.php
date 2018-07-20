@@ -16,6 +16,11 @@ class Category extends Model
         return $this->hasMany(Post::class);
     }
 
+    public function children()
+    {
+        return $this->hasMany(self::class, 'parent_id');
+    }
+
     /**
      * Return the sluggable configuration array for this model.
      *

@@ -539,7 +539,7 @@ about me
 subscribe newsletter
 ================*/
 
-.news-letter input[type="email"] {
+.subscribe_field {
     width: 100%;
     margin-bottom: 14px;
     border: 1px solid #eeeeee;
